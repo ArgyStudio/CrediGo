@@ -238,18 +238,7 @@ hr {
     transition: opacity 0.4s ease;
 }
 
-.benefit-item:hover,
-.benefit-item:active {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35),
-        0 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-.benefit-item:hover::before,
-.benefit-item:active::before {
-    opacity: 1;
-}
+/* --- ESTRATEGIA TOUCH VS MOUSE --- */
 
 .icon-benefit {
     font-size: 4.5rem;
@@ -259,12 +248,33 @@ hr {
     filter: drop-shadow(0 4px 8px rgba(255, 204, 0, 0.3));
 }
 
-/* ← Aquí la corrección: hover y active apuntan al .icon-benefit dentro de .benefit-item */
-.benefit-item:hover .icon-benefit,
-.benefit-item:active .icon-benefit {
-    transform: scale(1.15) translateY(-5px);
-    filter: drop-shadow(0 8px 15px rgba(255, 204, 0, 0.5));
-    color: var(--yellow2);
+/* 1. COMPORTAMIENTO MOUSE (PC) - Solo si el dispositivo soporta hover real */
+@media (hover: hover) {
+    .benefit-item:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.18);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35),
+            0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .benefit-item:hover::before {
+        opacity: 1;
+    }
+
+    .benefit-item:hover .icon-benefit {
+        transform: scale(1.15) translateY(-5px);
+        filter: drop-shadow(0 8px 15px rgba(255, 204, 0, 0.5));
+        color: var(--yellow2);
+    }
+}
+
+/* 2. COMPORTAMIENTO TÁCTIL (Móvil) - Feedback instantáneo al tocar */
+.benefit-item:active {
+    /* En vez de subir, hacemos que se "hunda" ligeramente como un botón físico */
+    transform: scale(0.96);
+    background: rgba(255, 255, 255, 0.15);
+    /* Transición casi instantánea para que se sienta eléctrico al tacto */
+    transition: transform 0.05s ease, background 0.05s;
 }
 
 .benefit-item h3 {
