@@ -238,14 +238,16 @@ hr {
     transition: opacity 0.4s ease;
 }
 
-.benefit-item:hover {
+.benefit-item:hover,
+.benefit-item:active {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.18);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35),
         0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-.benefit-item:hover::before {
+.benefit-item:hover::before,
+.benefit-item:active::before {
     opacity: 1;
 }
 
@@ -257,7 +259,9 @@ hr {
     filter: drop-shadow(0 4px 8px rgba(255, 204, 0, 0.3));
 }
 
-.benefit-item:hover .icon-benefit {
+/* ← Aquí la corrección: hover y active apuntan al .icon-benefit dentro de .benefit-item */
+.benefit-item:hover .icon-benefit,
+.benefit-item:active .icon-benefit {
     transform: scale(1.15) translateY(-5px);
     filter: drop-shadow(0 8px 15px rgba(255, 204, 0, 0.5));
     color: var(--yellow2);
@@ -681,7 +685,10 @@ footer p {
 /*  safary */
 html {
     min-height: 100%;
-    background: linear-gradient(180deg, var(--blue1) 0%, var(--blue2) 100%);
+    /* 1. Definimos un color sólido de respaldo (el mismo que el final de tu degradado) */
+    background-color: var(--blue2);
+    /* 2. Aplicamos el degradado SOLO como imagen, para no borrar el color de arriba */
+    background-image: linear-gradient(180deg, var(--blue1) 0%, var(--blue2) 100%);
 }
 
 body {
