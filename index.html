@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/mp.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+
+<body>
+
+
+
+    <!-- contenido principal -->
+
+    <main id="main">
+
+
+
+        <!-- mp -->
+        <div class="mp-notif-wrapper" aria-live="polite">
+            <div class="mp-notif" role="status" aria-label="Notificación de transferencia">
+                <div class="mp-avatar">
+                    <img src="./assets/images/mp/send-icon.png" alt="Icono envío" />
+                </div>
+
+                <div class="mp-main">
+                    <div class="mp-title">Prestamo Enviado✅</div>
+                    <div class="mp-sub">Transferencia enviada a <span class="recipient-name"></span>
+                    </div>
+                    <div class="mp-row">
+                        <div class="mp-badge"><img src="./assets/images/mp/mp-badge.png" alt="Mercado Pago" />
+                        </div>
+                        <div class="mp-meta">Dinero disponible</div>
+                    </div>
+                </div>
+
+                <div class="mp-right">
+                    <div class="mp-amount"><span class="minus">-</span> $ <span class="amount-value"></span></div>
+                    <div class="mp-time"><span class="time-value"></span> hs</div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- seccion 1 -->
+
+        <section class="hero">
+            <!-- logo (png) -->
+            <div class="header">
+                <img src="./assets/images/CrediGo-logo (1).png" alt="logo" class="logo">
+            </div>
+
+            <!-- sub-card1 -->
+            <div class="glass-card hero-card">
+                <h1 class="highlight">¿Necesitas dinero hoy?</h1>
+                <p class="subtitle">¡Olvida los bancos tradicionales!</p>
+                <button class="btn-contact" id="button-cta">
+                    <span>CONTACTANOS</span>
+                    <i class="fab fa-whatsapp"></i>
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- seccion 2 (beneficios) -->
+
+        <section class="benefits">
+            <h2 class="benefits-title">¿Por qué elegirnos?</h2>
+            <hr>
+
+            <!-- Contenedor Flex para las tarjetas -->
+            <div class="benefits-container">
+
+                <!-- Tarjeta 1 -->
+                <article class="glass-card benefit-item">
+                    <i class="fas fa-clock icon-benefit"></i>
+                    <h3>Rapido</h3>
+                    <p>Aprobación Inmediata</p>
+                </article>
+
+
+                <!-- Tarjeta 2 -->
+                <article class="glass-card benefit-item">
+                    <i class="fas fa-shield-alt icon-benefit"></i>
+                    <h3>Seguro</h3>
+                    <p>Protección Garantizada</p>
+                </article>
+
+
+                <!-- Tarjeta 3 -->
+                <article class="glass-card benefit-item">
+                    <i class="fas fa-hand-holding-usd icon-benefit"></i>
+                    <h3>Facil</h3>
+                    <p>100% Online</p>
+                </article>
+
+            </div>
+        </section>
+
+
+
+        <!-- Overlay Negro -->
+        <div id="black-overlay" class="overlay"></div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 CrediGo. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+<script src="./js/mp.js"></script>
+<script src="./js/main.js"></script>
+
+</html>

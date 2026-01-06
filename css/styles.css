@@ -1,0 +1,676 @@
+/* ### VARIABLES ### */
+:root {
+    --blue1: #0052cc;
+    --blue2: #003366;
+    --yellow1: #ffcc00;
+    --yellow2: #ff9900;
+    --white1: #ffffff;
+    --white2: #c5e0ed;
+}
+
+/* ### RESET Y BASE ### */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, var(--blue1) 0%, #1a1a1a 100%);
+    background-attachment: fixed;
+}
+
+/* ### MAIN CONTAINER ### */
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ### HERO SECTION ### */
+.hero {
+    padding: 70px 20px 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 85vh;
+
+    /* top */
+    margin-top: 100px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    display: block;
+}
+
+/* ### GLASS CARD ### */
+.glass-card {
+    text-align: center;
+    padding: 60px 50px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3),
+        0 5px 15px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.hero-card {
+    width: 100%;
+    max-width: 750px;
+}
+
+.highlight {
+    font-family: 'Poppins', 'Arial Black', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--yellow1);
+    margin: 0 0 25px 0;
+    text-transform: uppercase;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    text-shadow: 3px 3px 0 rgba(0, 51, 102, 0.8),
+        -1px -1px 0 rgba(0, 51, 102, 0.8),
+        1px -1px 0 rgba(0, 51, 102, 0.8),
+        -1px 1px 0 rgba(0, 51, 102, 0.8),
+        0 5px 15px rgba(0, 0, 0, 0.6),
+        0 8px 25px rgba(255, 153, 0, 0.4);
+    -webkit-text-stroke: 2px var(--blue2);
+    paint-order: stroke fill;
+    filter: drop-shadow(0 4px 20px rgba(255, 204, 0, 0.5));
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--white1);
+    margin: 0 0 45px 0;
+    line-height: 1.4;
+    text-shadow: 0 2px 6px rgba(12, 8, 83, 0.5);
+}
+
+/* ### BUTTON ### */
+.btn-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 22px 65px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, var(--yellow1) 0%, var(--yellow2) 100%);
+    color: #1a1a1a;
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4),
+        0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-contact:hover::before {
+    left: 100%;
+}
+
+.btn-contact i {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.btn-contact:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(255, 153, 0, 0.5),
+        0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-contact:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.btn-contact:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ### BENEFITS SECTION ### */
+.benefits {
+    padding: 80px 20px 100px;
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.15) 100%);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 95%;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    border-radius: 17px;
+}
+
+.benefits-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--white1);
+    margin: 0 0 25px 0;
+    letter-spacing: 0.5px;
+    text-shadow: 0 3px 15px rgba(12, 8, 83, 0.6),
+        0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+hr {
+    border: none;
+    height: 4px;
+    width: 150px;
+    margin: 0 auto 60px auto;
+    background: linear-gradient(90deg, transparent, var(--yellow1), transparent);
+    border-radius: 2px;
+}
+
+.benefits-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ### BENEFIT ITEMS ### */
+.benefit-item {
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.benefit-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    padding: 2px;
+    background: linear-gradient(135deg, transparent, rgba(255, 204, 0, 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35),
+        0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.benefit-item:hover::before {
+    opacity: 1;
+}
+
+.icon-benefit {
+    font-size: 4.5rem;
+    color: var(--yellow1);
+    margin: 0 0 15px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 8px rgba(255, 204, 0, 0.3));
+}
+
+.benefit-item:hover .icon-benefit {
+    transform: scale(1.15) translateY(-5px);
+    filter: drop-shadow(0 8px 15px rgba(255, 204, 0, 0.5));
+    color: var(--yellow2);
+}
+
+.benefit-item h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--white1);
+    margin: 0;
+}
+
+.benefit-item p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--white2);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ### FOOTER ### */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 30px 25px;
+    /* background: rgba(0, 0, 0, 0.15); */
+    backdrop-filter: blur(5px);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+    /* border-radius: 10px; */
+}
+
+footer p {
+    color: var(--white2);
+    margin: 0;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+    font-size: 0.6rem;
+
+}
+
+/* =================================================================
+   RESPONSIVE DESIGN
+   ================================================================= */
+
+/* ### DESKTOP MEDIANO ### */
+@media (max-width: 1200px) {
+    .hero {
+        padding: 60px 25px 70px;
+        gap: 50px;
+    }
+
+    .logo {
+        max-width: 340px;
+    }
+
+    .highlight {
+        font-size: 2rem;
+        -webkit-text-stroke: 1.8px var(--blue2);
+    }
+
+    .subtitle {
+        font-size: 1.65rem;
+    }
+
+    .btn-contact {
+        padding: 20px 60px;
+        font-size: 1.3rem;
+    }
+
+    .benefits {
+        padding: 70px 25px 90px;
+    }
+
+    .benefits-title {
+        font-size: 2.7rem;
+    }
+
+    .benefits-container {
+        gap: 40px;
+    }
+
+    .benefit-item {
+        padding: 45px 35px;
+    }
+
+    .icon-benefit {
+        font-size: 4rem;
+    }
+
+    .benefit-item h3 {
+        font-size: 1.6rem;
+    }
+
+    .benefit-item p {
+        font-size: 1.15rem;
+    }
+}
+
+/* ### TABLET ### */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 50px 25px 60px;
+        gap: 40px;
+        min-height: auto;
+    }
+
+    .logo {
+        max-width: 280px;
+    }
+
+    .glass-card {
+        padding: 45px 35px;
+    }
+
+    .highlight {
+        font-size: 2.8rem;
+        -webkit-text-stroke: 1.5px var(--blue2);
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 35px;
+    }
+
+    .btn-contact {
+        padding: 18px 50px;
+        font-size: 1.15rem;
+    }
+
+    .btn-contact i {
+        font-size: 1.7rem;
+    }
+
+    .benefits {
+        padding: 60px 25px 75px;
+    }
+
+    .benefits-title {
+        font-size: 2.3rem;
+    }
+
+    .benefits-container {
+        gap: 35px;
+    }
+
+    .benefit-item {
+        padding: 40px 30px;
+    }
+
+    .icon-benefit {
+        font-size: 3.5rem;
+    }
+
+    .benefit-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .benefit-item p {
+        font-size: 1.05rem;
+    }
+}
+
+/* ### TABLET PEQUEÑA ### */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 20px 50px;
+        gap: 30px;
+    }
+
+    .logo {
+        max-width: 230px;
+    }
+
+    .glass-card {
+        padding: 40px 30px;
+    }
+
+    .highlight {
+        font-size: 1.8rem;
+        -webkit-text-stroke: 1.2px var(--blue2);
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .btn-contact {
+        padding: 15px 40px;
+        font-size: 1.05rem;
+        gap: 12px;
+    }
+
+    .btn-contact i {
+        font-size: 1.6rem;
+    }
+
+    .benefits {
+        padding: 50px 20px 65px;
+    }
+
+    .benefits-title {
+        font-size: 2rem;
+    }
+
+    hr {
+        width: 120px;
+        margin-bottom: 50px;
+    }
+
+    .benefits-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 500px;
+    }
+
+    .benefit-item {
+        padding: 35px 30px;
+    }
+
+    .benefit-item::before {
+        border-radius: 20px;
+    }
+
+    .icon-benefit {
+        font-size: 2.8rem;
+    }
+
+    .benefit-item h3 {
+        font-size: 1.25rem;
+    }
+
+    .benefit-item p {
+        font-size: 0.95rem;
+    }
+
+    footer p {
+        font-size: 0.6rem;
+    }
+}
+
+/* ### MOBILE ### */
+@media (max-width: 480px) {
+    .hero {
+        padding: 35px 15px 45px;
+        gap: 30px;
+        min-height: auto;
+    }
+
+    .logo {
+        max-width: 200px;
+    }
+
+    .glass-card {
+        padding: 35px 25px;
+        border-radius: 18px;
+    }
+
+    .hero-card {
+        max-width: 100%;
+    }
+
+    .highlight {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        -webkit-text-stroke: 1px var(--blue2);
+        letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 28px;
+    }
+
+    .btn-contact {
+        padding: 14px 35px;
+        font-size: 1rem;
+        gap: 10px;
+    }
+
+    .btn-contact i {
+        font-size: 1.4rem;
+    }
+
+    .benefits {
+        padding: 45px 15px 60px;
+    }
+
+    .benefits-title {
+        font-size: 1.7rem;
+        margin-bottom: 18px;
+    }
+
+    hr {
+        width: 90px;
+        margin-bottom: 35px;
+    }
+
+    .benefits-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 8px;
+        max-width: 100%;
+    }
+
+    .benefit-item {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 20px 8px;
+        gap: 8px;
+    }
+
+    .benefit-item::before {
+        border-radius: 15px;
+    }
+
+    .icon-benefit {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .benefit-item h3 {
+        font-size: 0.85rem;
+    }
+
+    .benefit-item p {
+        font-size: 0.7rem;
+        line-height: 1.3;
+    }
+
+    footer {
+        padding: 20px 15px;
+    }
+
+    footer p {
+        font-size: 0.6rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ANIMACION */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(255, 204, 0, 0.06);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+    }
+}
+
+.btn-contact {
+    animation: pulse 2s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ### HIDDEN CLASS ### */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    /* Evita que se pueda hacer clic en elementos ocultos */
+    transition: opacity 0.2s ease;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.906);
+    backdrop-filter: blur(10px);
+    z-index: 9998;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.2s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
