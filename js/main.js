@@ -9,7 +9,7 @@ document.getElementById("button-cta").addEventListener('click', () => {
     overlay.classList.add("active")
 
     // --wsp--
-    const lines = ["5491172350144"]
+    const lines = ["5491172351144"]
     const lineR = lines[Math.floor(Math.random() * lines.length)]
     const msg = "Hola CrediGo! Quiero mas información..."
     const URL = `https://wa.me/${lineR}?text=${encodeURIComponent(msg)}`
