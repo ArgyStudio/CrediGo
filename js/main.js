@@ -11,7 +11,6 @@ document.getElementById("button-cta").addEventListener('click', () => {
     // --wsp--
     const lines = [
         "5491125050972",
-        "5491124973143",
         "5491162430169",
         "5491164567789",
         "5491125052196",
